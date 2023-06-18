@@ -1,6 +1,9 @@
-# jhipster
+# Jhipster On ElectronJs
 
-This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
+This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3). 
+
+Electron Js application documentation
+[https://www.electronjs.org/docs/latest/](https://www.electronjs.org/docs/latest/)
 
 ## Project Structure
 
