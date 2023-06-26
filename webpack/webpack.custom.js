@@ -42,40 +42,40 @@ module.exports = async (config, options, targetOptions) => {
     config.devServer.proxy = proxyConfig({ tls });
   }
 
-  if (targetOptions.target === 'serve' || config.watch) {
-    config.plugins.push(
-      new BrowserSyncPlugin(
-        {
-          host: 'localhost',
-          port: 9000,
-          https: tls,
-          proxy: {
-            target: `http${tls ? 's' : ''}://localhost:${targetOptions.target === 'serve' ? '4200' : '8080'}`,
-            ws: true,
-            proxyOptions: {
-              changeOrigin: false, //pass the Host header to the backend unchanged  https://github.com/Browsersync/browser-sync/issues/430
-            },
-          },
-          socket: {
-            clients: {
-              heartbeatTimeout: 60000,
-            },
-          },
-          /*
-          ghostMode: { // uncomment this part to disable BrowserSync ghostMode; https://github.com/jhipster/generator-jhipster/issues/11116
-            clicks: false,
-            location: false,
-            forms: false,
-            scroll: false,
-          },
-          */
-        },
-        {
-          reload: targetOptions.target === 'build', // enabled for build --watch
-        }
-      )
-    );
-  }
+  // if (targetOptions.target === 'serve' || config.watch) {
+  //   config.plugins.push(
+  //     new BrowserSyncPlugin(
+  //       {
+  //         host: 'localhost',
+  //         port: 9000,
+  //         https: tls,
+  //         proxy: {
+  //           target: `http${tls ? 's' : ''}://localhost:${targetOptions.target === 'serve' ? '4200' : '8080'}`,
+  //           ws: true,
+  //           proxyOptions: {
+  //             changeOrigin: false, //pass the Host header to the backend unchanged  https://github.com/Browsersync/browser-sync/issues/430
+  //           },
+  //         },
+  //         socket: {
+  //           clients: {
+  //             heartbeatTimeout: 60000,
+  //           },
+  //         },
+  //         /*
+  //         ghostMode: { // uncomment this part to disable BrowserSync ghostMode; https://github.com/jhipster/generator-jhipster/issues/11116
+  //           clicks: false,
+  //           location: false,
+  //           forms: false,
+  //           scroll: false,
+  //         },
+  //         */
+  //       },
+  //       {
+  //         reload: targetOptions.target === 'build', // enabled for build --watch
+  //       }
+  //     )
+  //   );
+  // }
 
   if (config.mode === 'production') {
     config.plugins.push(

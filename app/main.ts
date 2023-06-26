@@ -2,7 +2,7 @@ import {app, BrowserWindow, screen} from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
 
-let win: BrowserWindow = null;
+let win: BrowserWindow | null = null;
 const args = process.argv.slice(1),
   serve = args.some(val => val === '--serve');
 
@@ -12,10 +12,13 @@ function createWindow(): BrowserWindow {
 
   // Create the browser window.
   win = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: size.width,
-    height: size.height,
+    // x: 0,
+    // y: 0,
+    // width: size.width,
+    // height: size.height,
+    width: 1200,
+    height: 800,
+    center: true,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve),
