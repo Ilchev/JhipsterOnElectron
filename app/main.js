@@ -13,8 +13,8 @@ function createWindow() {
         // y: 0,
         // width: size.width,
         // height: size.height,
-        width: size.width / 2,
-        height: size.height / 2,
+        width: 1200,
+        height: 800,
         center: true,
         webPreferences: {
             nodeIntegration: true,
